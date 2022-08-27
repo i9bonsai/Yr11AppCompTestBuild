@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7491382020996916468}
-  - component: {fileID: 7402928852312387999}
+  - component: {fileID: 8341361174163767160}
+  - component: {fileID: 955749776666748544}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7491382020996916467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2781998, y: 0.6453433, z: 0.16176653}
+  m_LocalPosition: {x: 1.413, y: 0.6453433, z: 0.16176653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33,7 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7402928852312387999
+--- !u!65 &8341361174163767160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491382020996916467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: -1.48, y: 0.27, z: 0.05}
+--- !u!114 &955749776666748544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,6 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c468e760eee1e64cb69a885605c35fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveDistance: 0
 --- !u!1001 &7491382021403838126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,15 +87,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b5e89e7f69c66417f81ff6a0b42b9dd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.734
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b5e89e7f69c66417f81ff6a0b42b9dd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b5e89e7f69c66417f81ff6a0b42b9dd3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.732
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b5e89e7f69c66417f81ff6a0b42b9dd3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -132,16 +149,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b5e89e7f69c66417f81ff6a0b42b9dd3, type: 3}
   m_PrefabInstance: {fileID: 7491382021403838126}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &5850139794692123824
-BoxCollider:
+--- !u!114 &8341361175598590500
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7725878500272061439}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 5, y: 2.5, z: 5}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c468e760eee1e64cb69a885605c35fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  moveDirection: {x: 0, y: 1, z: 0}
+  moveDistance: 2
