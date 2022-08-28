@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public Rigidbody rig;
     public float jumpForce;
 
+    public int score;
+
     private bool isGrounded;
 
     // Start is called before the first frame update
@@ -33,19 +35,19 @@ public class Player : MonoBehaviour
         vel.y = 0;
 
         //If we're moving, rotate to face our moving direction
-        if(vel.x != 0 || vel.z != 0)
+        if (vel.x != 0 || vel.z != 0)
         {
-        transform.forward = vel;
-            
+            transform.forward = vel;
+
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
-        {   
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
             isGrounded = false;
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        if(transform.position.y < -10)
+        if (transform.position.y < -10)
         {
             GameOver();
         }
@@ -54,7 +56,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.contacts[0].normal == Vector3.up)
+        if (collision.contacts[0].normal == Vector3.up)
         {
             isGrounded = true;
 
@@ -63,10 +65,16 @@ public class Player : MonoBehaviour
 
     }
 
-    public void GameOver ()
+    public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void AddScore (int amount)
+    {
+        score += amount;
+    }
+
 
 }
 
