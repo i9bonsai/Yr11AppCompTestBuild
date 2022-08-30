@@ -14,7 +14,7 @@ public class EndFlag : MonoBehaviour
         {
             if (lastLevel == true)
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(0);
             }
             else
             {
